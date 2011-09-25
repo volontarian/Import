@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Import::VERSION
   s.authors     = ["Mathias Gawlista"]
   s.email       = ["gawlista@googlemail.com"]
-  s.homepage    = "applic.at"
+  s.homepage    = "http://applic.at"
   s.summary     = "Data entity importer for Ruby and asynchronous handling"
   s.description = "Data entity importer for Ruby and asynchronous handling"
 
