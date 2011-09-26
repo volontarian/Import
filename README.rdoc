@@ -4,15 +4,7 @@ Data entity importer for Ruby and asynchronous handling wrapped around activerec
 
 ## Usage
 
-Perform the installation as follows
-
-    rails g import:install
-    
-Run the installed migration
-
-    rake db:migrate
-    
-## Changelog
+https://github.com/Applicat/Import/wiki
 
 ## License
 

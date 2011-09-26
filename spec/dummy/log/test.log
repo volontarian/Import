@@ -211,3 +211,28 @@ Mysql2::Error: Unknown column 'no_relations.name' in 'where clause': SELECT musi
   [1m[36mMusic::Artist Load (0.4ms)[0m  [1mSELECT `music_artists`.* FROM `music_artists` ORDER BY `music_artists`.`id` DESC LIMIT 1[0m
   [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `music_artists` 
   [1m[36m (4.8ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO `imports` (`author_id`, `created_at`, `email`, `exception`, `input`, `parameters`, `parent_id`, `parent_type`, `state`, `type`, `updated_at`) VALUES (NULL, '2011-09-26 09:51:42', NULL, NULL, 'Böhse Onkelz', '--- {}\n', NULL, NULL, 'draft', 'Import::NoRelation', '2011-09-26 09:51:42')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mMusic::Artist Load (0.4ms)[0m  SELECT music_artists.id AS id, music_artists.name AS name FROM music_artists WHERE (music_artists.name = 'Böhse Onkelz')
+  [1m[36m (0.5ms)[0m  [1mSHOW VARIABLES like 'max_allowed_packet';[0m
+  [1m[35mClass Create Many Without Validations Or Callbacks (0.3ms)[0m  INSERT INTO `music_artists` (`name`,`created_at`,`updated_at`) VALUES ('Böhse Onkelz','2011-09-26 09:51:42','2011-09-26 09:51:42') ON DUPLICATE KEY UPDATE `music_artists`.`updated_at`=VALUES(`updated_at`)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (34.5ms)[0m  [1mUPDATE `imports` SET `state` = 'processed', `updated_at` = '2011-09-26 09:51:42', `parameters` = '--- {}\n' WHERE `imports`.`type` IN ('Import::NoRelation') AND `imports`.`id` = 17[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMusic::Artist Load (0.5ms)[0m  [1mSELECT `music_artists`.* FROM `music_artists` ORDER BY `music_artists`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `imports` (`author_id`, `created_at`, `email`, `exception`, `input`, `parameters`, `parent_id`, `parent_type`, `state`, `type`, `updated_at`) VALUES (NULL, '2011-09-26 09:51:42', NULL, NULL, 'Böhse Onkelz', '--- {}\n', NULL, NULL, 'draft', 'Import::NoRelation', '2011-09-26 09:51:42')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mMusic::Artist Load (0.4ms)[0m  SELECT music_artists.id AS id, music_artists.name AS name FROM music_artists WHERE (music_artists.name = 'Böhse Onkelz')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mUPDATE `imports` SET `state` = 'processed', `updated_at` = '2011-09-26 09:51:42', `parameters` = '--- {}\n' WHERE `imports`.`type` IN ('Import::NoRelation') AND `imports`.`id` = 18[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMusic::Artist Load (0.5ms)[0m  [1mSELECT `music_artists`.* FROM `music_artists` ORDER BY `music_artists`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `music_artists` 
+  [1m[36m (29.4ms)[0m  [1mROLLBACK[0m
