@@ -1,0 +1,17 @@
+gem "rails", "~> 3.1.0"
+gem "import", :path => '../../../import'
+
+#gem "activerecord", ">= 3.0.2"
+gem "valium"
+gem "state_machine"
+gem "activerecord-import"  
+
+group :development, :test do
+  gem "rspec", "~> 2.6.0"
+  gem "mysql2"
+  gem "rspec-rails"
+  gem "capybara"
+  gem "factory_girl_rails"
+  gem "guard-rspec"
+  gem "sdoc"
+end
