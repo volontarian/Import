@@ -4,20 +4,7 @@ module Import
   
     belongs_to :author, :class_name => 'User'
     belongs_to :parent, :polymorphic => true
-    
-    TYPES = [
-      [I18n.t('imports.types.user_import'), 'Importer::User'],
-      [I18n.t('imports.types.group_affiliation_import'), 'Importer::GroupAffiliation'],
-      [I18n.t('imports.types.music_group_label_affiliation_import'), 'Importer::Music::GroupLabelAffiliation'],
-      [I18n.t('imports.types.music_group_artist_affiliation_import'), 'Importer::Music::GroupArtistAffiliation'],
-      [I18n.t('imports.types.music_group_release_affiliation_import'), 'Importer::Music::GroupReleaseAffiliation'],
-      [I18n.t('imports.types.music_group_video_affiliation_import'), 'Importer::Music::GroupVideoAffiliation'],
-      [I18n.t('imports.types.music_artist_import'), 'Importer::Music::Artist'],
-      [I18n.t('imports.types.music_release_import'), 'Import::Music::Release']
-    ]
-    INDEX_COLUMNS = ['id', 'type', 'author_id', 'parent_type', 'parent_id']
       
-    validates :type, :inclusion => { :in => TYPES.map(&:last) }
     validates :input, :presence => true
     validates_format_of :email, :with  => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/, :allow_blank => true
     
