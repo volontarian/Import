@@ -1,6 +1,6 @@
 module Import
   class NoRelation < Resource    
-    attr_accessible :logger, :input, :email, :resource_class
+    attr_accessible :controller_logger, :input, :email, :resource_class
     attr_accessor :resource_class 
     
     protected

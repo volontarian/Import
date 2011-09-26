@@ -10,8 +10,8 @@ module Import
     
     serialize :parameters, Hash
     
-    attr_accessible :logger, :input, :email  
-    attr_accessor :logger,  :parent_import_id
+    attr_accessible :controller_logger, :input, :email  
+    attr_accessor :controller_logger,  :parent_import_id
     
     state_machine :state, :initial => :draft do  
       event :confirm do
@@ -113,7 +113,7 @@ module Import
     end
     
     def log(message)
-      logger.debug message unless logger == nil
+      controller_logger.debug message unless controller_logger == nil
     end
     
     private

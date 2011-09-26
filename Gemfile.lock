@@ -9,7 +9,7 @@ GIT
 PATH
   remote: .
   specs:
-    import (0.0.2)
+    import (0.0.3)
       activerecord-import
       rails (~> 3.1.0)
       state_machine
