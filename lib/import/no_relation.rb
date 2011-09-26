@@ -1,5 +1,8 @@
 module Import
-  class NoRelation < Resource
+  class NoRelation < Resource    
+    attr_accessible :logger, :input, :email, :resource_class
+    attr_accessor :resource_class 
+    
     protected
     
     def parse_resource(resource)
@@ -7,7 +10,7 @@ module Import
     end
     
     def append_existing_resources_criteria(resource)
-      @existing_resources_criteria << "(#{table_name}.name = ?)"
+      @existing_resources_criteria << "(#{resource_class.table_name}.name = ?)"
       @existing_resources_criteria_values << resource
     end
     
