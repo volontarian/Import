@@ -1,0 +1,38 @@
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `imports` (`author_id`, `created_at`, `email`, `exception`, `input`, `parameters`, `parent_id`, `parent_type`, `state`, `type`, `updated_at`) VALUES (NULL, '2011-09-25 21:09:39', NULL, NULL, 'Paradise Lost', '--- {}\n', NULL, NULL, 'draft', 'Importer::Music::Artist', '2011-09-25 21:09:39')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (33.2ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `imports` (`author_id`, `created_at`, `email`, `exception`, `input`, `parameters`, `parent_id`, `parent_type`, `state`, `type`, `updated_at`) VALUES (NULL, '2011-09-25 21:11:04', NULL, NULL, 'Paradise Lost', '--- {}\n', NULL, NULL, 'draft', 'Importer::Music::Artist', '2011-09-25 21:11:04')[0m
+  [1m[35m (1.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (5.4ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `imports` (`author_id`, `created_at`, `email`, `exception`, `input`, `parameters`, `parent_id`, `parent_type`, `state`, `type`, `updated_at`) VALUES (NULL, '2011-09-25 21:16:07', NULL, NULL, 'Paradise Lost', '--- {}\n', NULL, NULL, 'draft', 'Importer::Music::Artist', '2011-09-25 21:16:07')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMusic::Artist Load (0.1ms)[0m  [1mSELECT music_artists.id AS id, music_artists.name AS name FROM music_artists WHERE (music_artists.name = 'Paradise Lost')[0m
+  [1m[35m (3.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `imports` (`author_id`, `created_at`, `email`, `exception`, `input`, `parameters`, `parent_id`, `parent_type`, `state`, `type`, `updated_at`) VALUES (NULL, '2011-09-26 00:19:49', NULL, NULL, 'Paradise Lost', '--- {}\n', NULL, NULL, 'draft', 'Importer::Music::Artist', '2011-09-26 00:19:49')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMusic::Artist Load (0.2ms)[0m  [1mSELECT music_artists.id AS id, music_artists.name AS name FROM music_artists WHERE (music_artists.name = 'Paradise Lost')[0m
+  [1m[35m (5.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `imports` (`author_id`, `created_at`, `email`, `exception`, `input`, `parameters`, `parent_id`, `parent_type`, `state`, `type`, `updated_at`) VALUES (NULL, '2011-09-26 01:16:44', NULL, NULL, 'Paradise Lost', '--- {}\n', NULL, NULL, 'draft', 'Importer::Music::Artist', '2011-09-26 01:16:44')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mMusic::Artist Load (0.2ms)[0m  SELECT music_artists.id AS id, music_artists.name AS name FROM music_artists WHERE (music_artists.name = 'Paradise Lost')
+  [1m[36m (0.3ms)[0m  [1mSHOW VARIABLES like 'max_allowed_packet';[0m
+  [1m[35mClass Create Many Without Validations Or Callbacks (1.1ms)[0m  INSERT INTO `music_artists` (`name`,`created_at`,`updated_at`) VALUES ('Paradise Lost','2011-09-26 01:16:44','2011-09-26 01:16:44') ON DUPLICATE KEY UPDATE `music_artists`.`updated_at`=VALUES(`updated_at`)
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mUPDATE `imports` SET `state` = 'processed', `updated_at` = '2011-09-26 01:16:44', `parameters` = '--- {}\n' WHERE `imports`.`type` IN ('Importer::Music::Artist') AND `imports`.`id` = 9[0m
+  [1m[35m (0.7ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMusic::Artist Load (3.8ms)[0m  [1mSELECT `music_artists`.* FROM `music_artists` ORDER BY `music_artists`.`id` DESC LIMIT 1[0m
+  [1m[35m (8.4ms)[0m  ROLLBACK

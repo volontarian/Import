@@ -1,3 +1,19 @@
-= Import
+# Import
 
-Data entity importer for Ruby and asynchronous handling.
+Data entity importer for Ruby and asynchronous handling wrapped around activerecord-import and featured by valium and state_machine.
+
+## Usage
+
+Perform the installation as follows
+
+    rails g import:install
+    
+Run the installed migration
+
+    rake db:migrate
+    
+## Changelog
+
+## License
+
+Import is Copyright (c) 2010-2011 [Mathias Gawlista] (http://Applic.at) and is released under MIT-LICENSE.

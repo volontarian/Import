@@ -1,0 +1,20 @@
+ActiveRecord::Schema.define(:version => 20110918075425) do
+  create_table "imports", :force => true do |t|
+    t.string   "type"
+    t.text     "input"
+    t.text     "parameters"
+    t.string   "email"
+    t.integer  "author_id"
+    t.string   "parent_type"
+    t.integer  "parent_id"
+    t.text     "exception"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "imports", ["author_id"], :name => "index_imports_on_author_id"
+  add_index "imports", ["parent_type", "parent_id"], :name => "index_imports_on_parent_type_and_parent_id"
+  add_index "imports", ["state"], :name => "index_imports_on_state"
+  add_index "imports", ["type"], :name => "index_imports_on_type"
+end
