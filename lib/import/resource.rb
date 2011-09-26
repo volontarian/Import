@@ -70,10 +70,6 @@ module Import
     end
     
     def collection(force = true)
-      unless resource_class.respond_to?(:find_existing_entries)
-        raise I18n.t('imports.errors.derive_from_resource', :class_name => resource_class.class_name)
-      end
-      
       if force
         @existing_collection = find_existing_resources
       else
@@ -84,11 +80,11 @@ module Import
     protected
     
     def parse_resource(resource)
-      raise I18n.t('imports.errors.override_parse_resource', :class_name => self.class_name)
+      raise I18n.t('imports.errors.override_parse_resource', :class_name => self.class.name)
     end
     
     def append_existing_resources_criteria(resource)
-      raise I18n.t('imports.errors.override_append_existing_resources_criteria', :class_name => self.class_name)
+      raise I18n.t('imports.errors.override_append_existing_resources_criteria', :class_name => self.class.name)
     end
     
     def all_dependencies_loaded?
@@ -99,7 +95,7 @@ module Import
     end
     
     def import_resources  
-      raise I18n.t('imports.errors.override_import_resources', :class_name => self.class_name)  
+      raise I18n.t('imports.errors.override_import_resources', :class_name => self.class.name)  
     end
     
     def find_existing_resources
@@ -114,7 +110,7 @@ module Import
     end
     
     def parsed_resources_missing
-      raise I18n.t('imports.errors.override_parsed_resources_missing', :class_name => self.class_name)  
+      raise I18n.t('imports.errors.override_parsed_resources_missing', :class_name => self.class.name)  
     end
       
     def resource_class
@@ -160,6 +156,7 @@ module Import
       if self.exception.blank?
         return true
       elsif self.parent_import_id.blank?
+        raise self.exception
         self.my_fail!
         return false
       else
