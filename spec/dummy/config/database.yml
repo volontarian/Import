@@ -28,7 +28,7 @@ test:
   database: dummy_import_test
   pool: 5
   username: root
-  password: zero2005
+  password: 
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -38,5 +38,5 @@ production:
   database: dummy_import_production
   pool: 5
   username: root
-  password: zero2005
+  password:
   socket: /var/run/mysqld/mysqld.sock
