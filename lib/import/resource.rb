@@ -163,7 +163,6 @@ module Import
       unless self.input.blank?
         self.input.split("\r\n").map(&:strip).select{|r| !r.blank? }.each do |resource|
           self.add_resource(resource)
-          break
         end
       end
     end
