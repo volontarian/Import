@@ -17,8 +17,7 @@ Gem::Specification.new do |s|
   s.files = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {spec}/*`.split("\n")
   
-  s.add_dependency "rails", "~> 3.1.0"
-  #s.add_dependency "activerecord", ">= 3.0.2"
+  s.add_dependency "rails"
   s.add_dependency "valium"
   s.add_dependency "state_machine"
   s.add_dependency "activerecord-import"  
